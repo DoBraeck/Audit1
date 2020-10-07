@@ -1,0 +1,78 @@
+reconnaissance :
+1# On branche notre machine Kali dans un réseau qu'on ne connait pas
+2# On regarde ce qu'on connait, ici par exemple, une ip lui est attribuée dynamiquement
+3# On utilise cette IP comme base pour scanner le réseau
+=> 172.16.42.16
+nmap 172.16.42.0/24 (ici on test avec un /24)
+Il découvre :
+172.16.42.1 (44:2B:03:86:15:70) - Cisco Systems
+22 open ssh
+2002 open globe
+4002 open mlchat-proxy
+6002 open x11:2
+9002 open dynamid
+
+172.16.42.2 (D0:72:DC:D2:A2:70) - Cisco Systems
+22 open ssh
+2002 open globe
+4002 open mlchat-proxy
+6002 open x11:2
+9002 open dynamid
+
+172.16.42.3 (50:57:A8:06:2E:78) - Cisco Systems
+22 open ssh
+
+172.16.42.10 (00:00:5E:00:01:03) Icann, Iana Department
+22 open ssh
+2002 open globe
+4002 open mlchat-proxy
+6002 open x11:2
+9002 open dynamid
+
+172.16.42.11 (B0:48:7A:82:DF:F9) - Tp-link Technologies
+80 open http
+135 open msrpc
+139 open netbios-ssn
+445 open microsoft-ds
+902 open iss-realsecure
+912 open apex-mesh
+2383 open ms-olap4
+5357 open wsdapi
+7070 open realserver
+
+172.16.42.87 (08:00:27:C8:92:9C) - Oracle VirtualBox virtual NIC
+111 open rpcbind
+1007 oen unknown
+
+172.16.42.88 (38:60:77:2E:EE:14) - Pegatron
+135 open msrpc
+139 open netbios-ssn
+445 open microsoft-ds
+902 open iss-realsecure
+912 open apex-mesh
+3389 open ms-wbt-server
+49152 open unknown
+49153 open unknown
+49154 open unknown
+49155 open unknown
+49156 open unknown
+49157 open unknown
+
+172.16.42.16 (Me)
+All 1000 scanned ports are closed
+
+#on ne connait pas le scope du réseau donc on peux également tester avec (/16 ou /8)
+On trouve alors d'autres réseaux comme le 172.16.41.0, 172.16.43.0, 172.16.45.0, 172.16.49.0, 172.16.52.0 (41.0 et 43.0 sont les réseaux de maxime et margaux (visible car pas d'ACL))
+
+172.16.45.2
+172.16.45.3
+172.16.49.6
+172.16.49.7
+172.16.49.8
+172.16.49.9
+172.16.52.1
+172.16.52.12
+172.16.52.13
+172.16.52.15
+172.16.52.16
+
